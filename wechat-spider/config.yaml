@@ -1,16 +1,16 @@
 mysqldb:
-  ip: "mariadb"
+  ip: 192.168.5.200
   port: 3306
-  db: test
+  db: wechat
   user: root
-  passwd: "root"
-  auto_create_tables: True # 是否自动建表 建议当表不存在是设置为true，表存在是设置为false，加快软件启动速度
+  passwd: "123456"
+  auto_create_tables: False # 是否自动建表 建议当表不存在是设置为true，表存在是设置为false，加快软件启动速度
 
 redisdb:
-  ip: redis
+  ip: 192.168.5.200
   port: 6379
   db: 0
-  passwd:
+  passwd: "psd"
 
 spider:
   monitor_interval: 3600 # 公众号扫描新发布文章周期时间间隔 单位秒
@@ -31,4 +31,4 @@ log:
   log_path: ./logs/wechat_spider.log
 
 mitm:
-  log_level: 0 # mitm框架日志的打印级别。值在0~3之间，值越大，输出的日志信息越详细，默认是1。详见：https://docs.mitmproxy.org/stable/concepts-options/
+  log_level: 3 # mitm框架日志的打印级别。值在0~3之间，值越大，输出的日志信息越详细，默认是1。详见：https://docs.mitmproxy.org/stable/concepts-options/

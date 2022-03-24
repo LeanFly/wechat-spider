@@ -347,7 +347,7 @@ class DealData:
             '//div[@class="rich_media_content "]|//div[@class="rich_media_content"]|//div[@class="share_media"]'
         )
         title = (
-            selector.xpath('//h2[@class="rich_media_title"]/text()')
+            selector.xpath('//h1[@class="rich_media_title"]/text()')
             .extract_first(default="")
             .strip()
         )
@@ -364,7 +364,7 @@ class DealData:
             .strip()
         )
 
-        publish_timestamp = selector.re_first('n="(\d{10})"')
+        publish_timestamp = selector.re_first('ct = "(\d+)"')
         publish_timestamp = int(publish_timestamp) if publish_timestamp else None
         publish_time = (
             tools.timestamp_to_date(publish_timestamp) if publish_timestamp else None
