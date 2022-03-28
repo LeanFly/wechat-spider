@@ -373,7 +373,7 @@ class DealData:
         pics_url = content.xpath(".//img/@src|.//img/@data-src").extract()
         biz = tools.get_param(req_url, "__biz")
 
-        digest = selector.re_first('var msg_desc = "(.*?)"')
+        digest = selector.re_first('var msg_desc = htmlDecode\("(.*?)"\);')
         cover = selector.re_first('var cover = "(.*?)";') or selector.re_first(
             'msg_cdn_url = "(.*?)"'
         )
